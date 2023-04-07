@@ -1,5 +1,3 @@
 # ReadForge.jl
 
-Welcome to the ReadForge.jl documentation!
-
-testing
+Greetings, and welcome to the ReadForge.jl documentation!
