@@ -7,7 +7,6 @@ makedocs(
     format=Documenter.HTML(),
     pages=[
         "Home" => "index.md",
-        "API" => "api.md",
     ],
 )
 
