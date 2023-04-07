@@ -12,10 +12,9 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/Periareion/ReadForge.jl.git",
+    repo = "github.com/Periareion/ReadForge.jl.git", # Replace 'username' with your GitHub username
     target = "build",
     branch = "gh-pages",
-    devbranch = "dev", # The branch that the documentation is built from
+    devbranch = "dev", # The branch that you want to build the documentation from
     push_preview = true,
-    make = x->nothing,
 )
