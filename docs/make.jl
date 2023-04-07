@@ -4,7 +4,7 @@ using ReadForge
 using Documenter
 
 makedocs(
-    sitename = "ReadForge.jl Documentation",
+    sitename = "ReadForge.jl",
     modules = [ReadForge],
     format = Documenter.HTML(),
     pages = [
