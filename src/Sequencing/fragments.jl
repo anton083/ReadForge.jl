@@ -58,3 +58,5 @@ end
 @inline sequence(fragment::Fragment) = fragment.genome[fragment.range]
 @inline view(fragment::Fragment) = view(fragment.genome, fragment.range)
 @inline view(fragment::Fragment, subrange::UnitRange{Int}) = view(genome, fragment.range[subrange])
+
+# foo bar
