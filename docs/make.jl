@@ -1,20 +1,19 @@
-using Documenter
+push!(LOAD_PATH, "../src/")
+
 using ReadForge
+using Documenter
 
 makedocs(
-    sitename="ReadForge.jl Documentation",
-    modules=[ReadForge],
-    format=Documenter.HTML(),
-    pages=[
+    sitename = "ReadForge.jl Documentation",
+    modules = [ReadForge],
+    format = Documenter.HTML(),
+    pages = [
         "Home" => "index.md",
     ],
 )
 
-deploydocs(
-    repo="github.com/Periareion/ReadForge.jl.git",
-    push_preview=true,
-    devbranch="dev",
-    devurl="dev/",
-    target="build",
-    branch="gh-pages",
+deploydocs(;
+    repo = "github.com/Periareion/ReadForge.jl.git",
+    branch = "gh-pages",
+    devbranch = "dev",
 )
