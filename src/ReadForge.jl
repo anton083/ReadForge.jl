@@ -1,5 +1,9 @@
 module ReadForge
 
-# Write your package code here.
+    using BioSequences, FASTX, Random
+
+    include("Sequencing/Sequencing.jl")
+
+    export Sequencing
 
 end
