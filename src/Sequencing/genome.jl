@@ -9,6 +9,6 @@ function Genome(sequence::LongDNA{4})
     Genome(sequence, length(sequence), BioSequences.gc_content(sequence))
 end
 
-@inline Base.view(genome::Genome, range::UnitRange(<:Integer)) = view(genome.sequence, range)
+@inline Base.view(genome::Genome, range::UnitRange{Int}) = view(genome.sequence, range)
 @inline Base.length(genome::Genome) = length(genome.sequence)
 @inline Base.iterate(genome::Genome) = iterate(genome.sequence)
