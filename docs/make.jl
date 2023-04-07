@@ -9,8 +9,6 @@ makedocs(
         "Home" => "index.md",
         "API" => "api.md",
     ],
-    authors="Your Name",
-    assets=["assets"],
 )
 
 deploydocs(
