@@ -24,6 +24,7 @@ end
 struct PairedRead{D <: Direction} <: Read
     genome_range::UnitRange{Int}
     substitutions::Vector{Substitution}
+end
 
 struct PairedReads
     forward_read::PairedRead{Forward}
