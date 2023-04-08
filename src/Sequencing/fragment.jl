@@ -2,7 +2,8 @@
 export
     Fragmenter,
     genome_fragment_ranges,
-    Fragment
+    Fragment,
+    Fragments
 
 
 struct Fragmenter
@@ -61,6 +62,14 @@ function Fragments(
     Fragments(genome, sample(fragment_ranges, N, replace=false))
 end
 
-@inline Base.length(fragment::Fragment) = length(fragment.range)
-@inline Base.view(fragment::Fragment) = view(fragment.genome, fragment.range)
-@inline Base.view(fragment::Fragment, subrange::UnitRange{Int}) = view(genome, fragment.range[subrange])
+@inline function Base.length(fragment::Fragment)::Int
+    length(fragment.range)
+end
+
+@inline function Base.view(fragment::Fragment)::LongDNAView{4}
+    view(fragment.genome, fragment.range)
+end
+
+@inline function Base.view(fragment::Fragment, subrange::UnitRange{Int})::LongDNAView{4}
+    view(fragment.genome, fragment.range[subrange])
+end
