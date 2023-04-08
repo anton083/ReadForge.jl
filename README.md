@@ -1,4 +1,4 @@
-# ReadForge
+# ReadForge.jl
 
 [![Build Status](https://github.com/Periareion/ReadForge.jl/actions/workflows/CI.yml/badge.svg?branch=dev)](https://github.com/Periareion/ReadForge.jl/actions/workflows/CI.yml?query=branch%3Adev)
 [![Coverage](https://codecov.io/gh/Periareion/ReadForge.jl/branch/dev/graph/badge.svg)](https://codecov.io/gh/Periareion/ReadForge.jl)
