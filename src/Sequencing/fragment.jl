@@ -2,7 +2,8 @@
 export
     Fragmenter,
     genome_fragment_ranges,
-    Fragment
+    Fragment,
+    Fragments
 
 
 struct Fragmenter
@@ -63,4 +64,4 @@ end
 
 @inline Base.length(fragment::Fragment) = length(fragment.range)
 @inline Base.view(fragment::Fragment) = view(fragment.genome, fragment.range)
-@inline Base.view(fragment::Fragment, subrange::UnitRange{Int}) = view(genome, fragment.range[subrange])
+@inline Base.view(fragment::Fragment, subrange::UnitRange{Int}) = view(fragment.genome, fragment.range[subrange])

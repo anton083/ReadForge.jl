@@ -1,7 +1,9 @@
 
 export
+    Single,
+    Paired,
     FragmentReader,
-    paired_reads
+    read_fragment
 
 # TODO: function for substitution vector with args length and substitution rate
 
@@ -22,8 +24,12 @@ struct Substitution
     base::DNA
 end
 
-struct FragmentReader
-    paired::Bool
+
+abstract type ReadMode end
+struct Single <: ReadMode end
+struct Paired <: ReadMode end
+
+struct FragmentReader{M <: ReadMode}
     read_length::Int
     substitution_rate::Float64
 end
@@ -43,7 +49,7 @@ end
 @inline Base.length(read::Read) = length(read.view)
 
 
-function paired_reads(fragment::Fragment, fragment_reader::FragmentReader)
+function read_fragment(fragment::Fragment, fragment_reader::FragmentReader{})
     read_length = min(fragment_reader.read_length, length(fragment))
     
     seq_1 = view(fragment.genome.sequence, fragment.range)

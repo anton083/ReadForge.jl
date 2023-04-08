@@ -10,17 +10,27 @@ using Random
 end
 
 @testset "Sequencing.jl" begin
-    @testset "Fragment ranges" begin
-        genome = Genome(dna"ACGT"^10)
-        fragmenter = Fragmenter(4)
-        @test length(genome_fragment_ranges(genome, fragmenter)) == 10
+    @testset "fragment.jl" begin
+        genome = Genome(random_dna(40))
+        fragmenter = Fragmenter(8)
+
+        fragment_ranges = genome_fragment_ranges(genome, fragmenter)
+        
+        fragment_length = 20
+        fragment = Fragment(genome, 1:fragment_length)
+        @test length(fragment) == fragment_length
+        @test length(view(fragment)) == fragment_length
+        @test length(view(fragment, 1:min(5, fragment_length))) <= 5 
+
+        @test length(fragment_ranges) == 5
+        @test sum(length.(Fragments(genome, fragment_ranges))) == genome.length
+        @test length(Fragments(genome, fragment_ranges, 3)) == 3
     end
     
-    @testset "Paired-end reading" begin
-        Random.seed!(42)
-        fragment_reader = FragmentReader(true, 8, 0.2)
-        genome = Genome(dna"GACCAGCAGGTGTCATCGTATACTATCGACGATCACGCAGCGATTGCTACTC")
+    @testset "read.jl" begin
+        genome = Genome(random_dna(50))
+        paired_reader = FragmentReader{Paired}(8, 0.2)
         fragment = Fragment(genome, 1:20)
-        read_pair = paired_reads(fragment, fragment_reader)
+        read_pair = read_fragment(fragment, paired_reader)
     end
 end
