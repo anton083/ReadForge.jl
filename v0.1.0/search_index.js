@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"#ReadForge.jl","page":"Home","title":"ReadForge.jl","text":"","category":"section"},{"location":"","page":"Home","title":"Home","text":"Greetings, and welcome to the ReadForge.jl documentation!","category":"page"},{"location":"","page":"Home","title":"Home","text":"ReadForge.Genome","category":"page"},{"location":"#ReadForge.Genome","page":"Home","title":"ReadForge.Genome","text":"Genome(sequence::LongDNA{4})\n\nCreate a genome from a sequence. The genome struct stores the reverse complement sequence, length, and GC-content. \n\n\n\n\n\n","category":"type"}]
+}
