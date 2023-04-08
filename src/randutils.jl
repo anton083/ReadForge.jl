@@ -1,4 +1,6 @@
 
+export
+    random_dna
 
 "Weighted sampler that gets sampled based on GC-ratio"
 function dna_sampler(GC_ratio::Float64)::SamplerWeighted
@@ -16,5 +18,3 @@ end
 function random_dna(length::Integer, GC_ratio::Float64 = 0.5)::LongDNA{4}
     random_dna(length, dna_sampler(GC_ratio))
 end
-
-export random_dna

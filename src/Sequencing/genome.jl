@@ -16,10 +16,14 @@ end
 
 Create a genome from a sequence. The genome struct stores the reverse complement sequence, length, and GC-content. 
 """
-function Genome(sequence::LongDNA{4})
+function Genome(sequence::LongDNA{4})::Genome
     Genome(sequence, reverse_complement(sequence), length(sequence), BioSequences.gc_content(sequence))
 end
 
-@inline Base.view(genome::Genome, range::UnitRange{Int}) = view(genome.sequence, range)
-@inline Base.length(genome::Genome) = length(genome.sequence)
-@inline Base.iterate(genome::Genome) = iterate(genome.sequence)
+@inline function Base.view(genome::Genome, range::UnitRange{Int})::LongDNAView{4}
+    view(genome.sequence, range)
+end
+
+@inline function Base.length(genome::Genome)::Int
+    length(genome.sequence)
+end

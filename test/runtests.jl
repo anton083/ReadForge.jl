@@ -7,9 +7,16 @@ using Random
 
 @testset "ReadForge.jl" begin
 
-end
+    @testset "randutils.jl" begin
+        @test 0.15 < gc_content(random_dna(1000, 0.25)) < 0.35
+    end
+    
+    @testset "genome.jl" begin
+        genome_length = 40
+        genome = Genome(random_dna(genome_length))
+        @test length(genome) == genome_length
+    end
 
-@testset "Sequencing.jl" begin
     @testset "fragment.jl" begin
         genome = Genome(random_dna(40))
         fragmenter = Fragmenter(8)
@@ -29,8 +36,11 @@ end
     
     @testset "read.jl" begin
         genome = Genome(random_dna(50))
-        paired_reader = FragmentReader{Paired}(8, 0.2)
+        read_length = 12
+        sequencer = Sequencer{Paired}(read_length, 0.2)
         fragment = Fragment(genome, 1:20)
-        read_pair = read_fragment(fragment, paired_reader)
+        read_pair = read_fragment(fragment, sequencer)
+        @test length(read_pair.forward_read) == length(read_pair.backward_read) == read_length
     end
+
 end
