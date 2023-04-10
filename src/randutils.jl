@@ -2,7 +2,7 @@
 export
     random_dna
 
-"Weighted sampler that gets sampled based on GC-ratio"
+    
 function dna_sampler(GC_ratio::Float64)::SamplerWeighted
     SamplerWeighted(
         dna"ACGTN",
