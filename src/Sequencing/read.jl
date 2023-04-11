@@ -1,10 +1,4 @@
 
-export
-    Single,
-    Paired,
-    Sequencer,
-    read_fragment
-
 # TODO: function for substitution vector with args length and substitution rate
 
 abstract type Direction end

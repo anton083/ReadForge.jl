@@ -1,11 +1,4 @@
 
-export
-    Fragmenter,
-    genome_fragment_ranges,
-    Fragment,
-    Fragments
-
-
 struct Fragmenter
     mean_size::Int
 end

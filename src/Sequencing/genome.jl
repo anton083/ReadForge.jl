@@ -1,7 +1,4 @@
 
-export
-    Genome
-
 using BioSequences
 
 struct Genome
