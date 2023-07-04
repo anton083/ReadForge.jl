@@ -5,6 +5,3 @@
 [![Latest Release](https://img.shields.io/github/release/Periareion/ReadForge.jl.svg)](https://github.com/Periareion/ReadForge.jl/releases/latest)
 [![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://periareion.github.io/ReadForge.jl/stable/)
 [![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Periareion/ReadForge.jl/LICENSE)
-
-### The algorithm makes the following assumptions:
-- Similar query sequence lengths
